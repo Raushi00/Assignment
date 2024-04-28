@@ -88,3 +88,40 @@ Build, Tag, and Push Image: Builds the Docker image, tags it, and pushes it to A
 Update values.yaml: Updates the values.yaml file with the new image tag and pushes the changes to the GitHub repository
 
 -------------------------------
+
+Task 4 : DevOps & Automation
+
+AWS S3 Backup and EC2 Insatance Scaling Automation
+
+This repository folder devops-automation contains scripts to automate two tasks:
+
+1. Backup an AWS S3 bucket to a local directory.
+2. Automatically scale EC2 instances based on CPU utilization.
+
+Scripts:
+
+backup_s3.py/backup_s3.sh: This script automates the backup process of an AWS S3 bucket.
+
+instance_scale_cpu.py: This script implements automatic scaling of EC2 instances based on CPU utilization.
+
+I would like to suggest also below alternative automation to achieve this 
+
+S3 Replication for Backup:
+Instead of downloading S3 objects to a local directory/Server, an alternative solution is to utilize S3 Replication. S3 Replication allows automatic replication of objects from one S3 bucket to another, either within the same AWS Region or across different Regions. This ensures data redundancy and disaster recovery without the need for manual intervention.
+
+Auto Scaling Policies for EC2
+Rather than managing EC2 instance scaling through custom scripts, AWS offers Auto Scaling Policies that can be configured to automatically adjust the number of EC2 instances based on various metrics, including CPU utilization. Specifically, Step Scaling Policies can be employed to define scaling adjustments based on predefined thresholds.
+
+Setup and Usage
+To use the provided scripts, follow the steps below:
+
+1. Prerequisites:
+Ensure you have Python installed on your system.
+
+Install the required AWS CLI, Python, Python packages using pip install boto3.
+
+Note:
+
+Ensure proper IAM roles and permissions are configured for the AWS credentials used by the scripts to access S3 and EC2 resources.
+
+Review and test the scripts in a non-production environment before deploying them to production.
