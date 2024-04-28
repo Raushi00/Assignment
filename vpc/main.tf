@@ -66,10 +66,6 @@ module "vpc" {
   enable_nat_gateway = true
   single_nat_gateway = false
 
- # enable_dhcp_options              = false
-  #dhcp_options_domain_name         = "service.consul"
-  #dhcp_options_domain_name_servers = ["10.183.8.2"]
-
   # Default security group - ingress/egress rules cleared to deny all
  manage_default_security_group  = true
  default_security_group_ingress = []
